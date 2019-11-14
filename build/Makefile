@@ -61,7 +61,7 @@ clean:
 	rm $(IMG_NAME).img
 
 run: build
-	.././qemu-system-aarch64 -m 128 -no-reboot -M raspi2 -serial stdio -kernel kernel.elf
+	qemu-system-arm -m 128 -no-reboot -M raspi2 -serial stdio -kernel kernel.elf
 
 dbg:
 	$(GDB) kernel.elf
